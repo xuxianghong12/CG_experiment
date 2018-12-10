@@ -1,2 +1,2 @@
-# CG_experiment
-Computer graphics experiment program, DDA, Bresenham, midpoint circle and midpoint ellipse.
+# 计算机图形学实验
+DDA画线、Bresenham画线、中点圆和中点椭圆算法。
