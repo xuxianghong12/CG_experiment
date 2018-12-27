@@ -1,2 +1,6 @@
 # 计算机图形学实验
-DDA画线、Bresenham画线、中点圆和中点椭圆算法。
+实现：DDA画线、Bresenham画线、中点圆和中点椭圆算法共四个，用PyQt5实现图形化界面。
+
+```
+pip install matplotlib
+```
