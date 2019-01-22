@@ -1,0 +1,268 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'test.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+import matplotlib.pyplot as plt
+
+from dda import DrawDDA
+from Bresenham import DrawBre
+from midpoint_circle import Drawcircle
+from midpoint_ellipse import Drawellipse
+
+##########################   GUI     ##############
+class Ui_MainWindow(object):
+    def drawdda(self, MainWindow):
+        x0 = int(self.edit_dda_x0.value())
+        y0 = int(self.edit_dda_y0.value())
+        x1 = int(self.edit_dda_x1.value())
+        y1 = int(self.edit_dda_y1.value())
+        DrawDDA(x0,y0,x1,y1)
+    def drawbre(self, MainWindow):
+        x0 = int(self.edit_bre_x0.value())
+        y0 = int(self.edit_bre_y0.value())
+        x1 = int(self.edit_bre_x1.value())
+        y1 = int(self.edit_bre_y1.value())
+        DrawBre(x0,y0,x1,y1)
+    def drawcircle(self, MainWindow):
+        xc = int(self.edit_circle_xc.value())
+        yc = int(self.edit_circle_yc.value())
+        r = int(self.edit_circle_r.value())
+        Drawcircle(xc, yc, r)
+    def drawellipse(self, MainWindow):
+        xc = int(self.edit_ellipse_xc.value())
+        yc = int(self.edit_ellipse_yc.value())
+        rx = int(self.edit_ellipse_rx.value())
+        ry = int(self.edit_ellipse_ry.value())
+        Drawellipse(xc, yc, rx, ry)
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.dda_but = QtWidgets.QPushButton(self.centralwidget)
+        self.dda_but.setGeometry(QtCore.QRect(540, 20, 161, 81))
+        self.dda_but.setObjectName("dda_but")
+        self.bre_but = QtWidgets.QPushButton(self.centralwidget)
+        self.bre_but.setGeometry(QtCore.QRect(540, 130, 161, 81))
+        self.bre_but.setObjectName("bre_but")
+        self.circle_but = QtWidgets.QPushButton(self.centralwidget)
+        self.circle_but.setGeometry(QtCore.QRect(540, 260, 161, 81))
+        self.circle_but.setObjectName("circle_but")
+        self.ellipse_but = QtWidgets.QPushButton(self.centralwidget)
+        self.ellipse_but.setGeometry(QtCore.QRect(540, 370, 161, 81))
+        self.ellipse_but.setObjectName("ellipse_but")
+        self.edit_dda_x0 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_dda_x0.setGeometry(QtCore.QRect(250, 30, 62, 27))
+        self.edit_dda_x0.setObjectName("edit_dda_x0")
+        self.edit_dda_y0 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_dda_y0.setGeometry(QtCore.QRect(340, 30, 62, 27))
+        self.edit_dda_y0.setObjectName("edit_dda_y0")
+        self.edit_dda_x1 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_dda_x1.setGeometry(QtCore.QRect(250, 70, 62, 27))
+        self.edit_dda_x1.setObjectName("edit_dda_x1")
+        self.edit_dda_y1 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_dda_y1.setGeometry(QtCore.QRect(340, 70, 62, 27))
+        self.edit_dda_y1.setObjectName("edit_dda_y1")
+        self.edit_bre_x0 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_bre_x0.setGeometry(QtCore.QRect(250, 140, 62, 27))
+        self.edit_bre_x0.setObjectName("edit_bre_x0")
+        self.edit_bre_y0 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_bre_y0.setGeometry(QtCore.QRect(340, 140, 62, 27))
+        self.edit_bre_y0.setObjectName("edit_bre_y0")
+        self.edit_bre_x1 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_bre_x1.setGeometry(QtCore.QRect(250, 180, 62, 27))
+        self.edit_bre_x1.setObjectName("edit_bre_x1")
+        self.edit_bre_y1 = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_bre_y1.setGeometry(QtCore.QRect(340, 180, 62, 27))
+        self.edit_bre_y1.setObjectName("edit_bre_y1")
+        self.edit_circle_xc = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_circle_xc.setGeometry(QtCore.QRect(250, 270, 62, 27))
+        self.edit_circle_xc.setObjectName("edit_circle_xc")
+        self.edit_circle_yc = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_circle_yc.setGeometry(QtCore.QRect(340, 270, 62, 27))
+        self.edit_circle_yc.setObjectName("edit_circle_yc")
+        self.edit_circle_r = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_circle_r.setGeometry(QtCore.QRect(250, 310, 62, 27))
+        self.edit_circle_r.setObjectName("edit_circle_r")
+        self.edit_ellipse_xc = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_ellipse_xc.setGeometry(QtCore.QRect(250, 380, 62, 27))
+        self.edit_ellipse_xc.setObjectName("edit_ellipse_xc")
+        self.edit_ellipse_yc = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_ellipse_yc.setGeometry(QtCore.QRect(340, 380, 62, 27))
+        self.edit_ellipse_yc.setObjectName("edit_ellipse_yc")
+        self.edit_ellipse_rx = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_ellipse_rx.setGeometry(QtCore.QRect(250, 420, 62, 27))
+        self.edit_ellipse_rx.setObjectName("edit_ellipse_rx")
+        self.edit_ellipse_ry = QtWidgets.QDoubleSpinBox(self.centralwidget)
+        self.edit_ellipse_ry.setGeometry(QtCore.QRect(340, 420, 62, 27))
+        self.edit_ellipse_ry.setObjectName("edit_ellipse_ry")
+        self.dda_start = QtWidgets.QLabel(self.centralwidget)
+        self.dda_start.setGeometry(QtCore.QRect(50, 30, 81, 20))
+        self.dda_start.setObjectName("dda_start")
+        self.dda_end = QtWidgets.QLabel(self.centralwidget)
+        self.dda_end.setGeometry(QtCore.QRect(50, 70, 81, 18))
+        self.dda_end.setObjectName("dda_end")
+        self.bre_start = QtWidgets.QLabel(self.centralwidget)
+        self.bre_start.setGeometry(QtCore.QRect(50, 140, 71, 16))
+        self.bre_start.setObjectName("bre_start")
+        self.bre_end = QtWidgets.QLabel(self.centralwidget)
+        self.bre_end.setGeometry(QtCore.QRect(50, 180, 71, 18))
+        self.bre_end.setObjectName("bre_end")
+        self.ellipse_midpoint = QtWidgets.QLabel(self.centralwidget)
+        self.ellipse_midpoint.setGeometry(QtCore.QRect(50, 380, 81, 20))
+        self.ellipse_midpoint.setObjectName("ellipse_midpoint")
+        self.ellipse_rxry = QtWidgets.QLabel(self.centralwidget)
+        self.ellipse_rxry.setGeometry(QtCore.QRect(50, 420, 81, 18))
+        self.ellipse_rxry.setObjectName("ellipse_rxry")
+        self.circle_midpoint = QtWidgets.QLabel(self.centralwidget)
+        self.circle_midpoint.setGeometry(QtCore.QRect(50, 280, 81, 16))
+        self.circle_midpoint.setObjectName("circle_midpoint")
+        self.circle_r = QtWidgets.QLabel(self.centralwidget)
+        self.circle_r.setGeometry(QtCore.QRect(50, 310, 81, 18))
+        self.circle_r.setObjectName("circle_r")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(170, 30, 54, 18))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(420, 30, 54, 18))
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(420, 70, 54, 18))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(420, 140, 54, 18))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(420, 180, 54, 18))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(170, 70, 54, 18))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(170, 140, 54, 18))
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(self.centralwidget)
+        self.label_8.setGeometry(QtCore.QRect(170, 180, 54, 18))
+        self.label_8.setObjectName("label_8")
+        self.label_12 = QtWidgets.QLabel(self.centralwidget)
+        self.label_12.setGeometry(QtCore.QRect(420, 420, 54, 18))
+        self.label_12.setObjectName("label_12")
+        self.label_13 = QtWidgets.QLabel(self.centralwidget)
+        self.label_13.setGeometry(QtCore.QRect(420, 380, 54, 18))
+        self.label_13.setObjectName("label_13")
+        self.label_15 = QtWidgets.QLabel(self.centralwidget)
+        self.label_15.setGeometry(QtCore.QRect(420, 270, 54, 18))
+        self.label_15.setObjectName("label_15")
+        self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setGeometry(QtCore.QRect(170, 310, 54, 18))
+        self.label_9.setObjectName("label_9")
+        self.label_10 = QtWidgets.QLabel(self.centralwidget)
+        self.label_10.setGeometry(QtCore.QRect(170, 380, 54, 18))
+        self.label_10.setObjectName("label_10")
+        self.label_11 = QtWidgets.QLabel(self.centralwidget)
+        self.label_11.setGeometry(QtCore.QRect(170, 270, 54, 18))
+        self.label_11.setObjectName("label_11")
+        self.label_14 = QtWidgets.QLabel(self.centralwidget)
+        self.label_14.setGeometry(QtCore.QRect(170, 420, 54, 18))
+        self.label_14.setObjectName("label_14")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.edit_dda_x0.setRange(int(-10000), int(10000))
+        self.edit_dda_x1.setRange(-10000, 10000)
+        self.edit_dda_y0.setRange(-10000, 10000)
+        self.edit_dda_y1.setRange(-10000, 10000)
+ 
+        self.edit_dda_x0.setValue(int(-10))
+        self.edit_dda_x1.setValue(-6)
+        self.edit_dda_y0.setValue(30)
+        self.edit_dda_y1.setValue(40)
+ 
+        self.edit_bre_x0.setRange(-10000, 10000)
+        self.edit_bre_x1.setRange(-10000, 10000)
+        self.edit_bre_y0.setRange(-10000, 10000)
+        self.edit_bre_y1.setRange(-10000, 10000)
+        
+        self.edit_bre_x0.setValue(-10)
+        self.edit_bre_x1.setValue(6)
+        self.edit_bre_y0.setValue(30)
+        self.edit_bre_y1.setValue(40)
+              
+        self.edit_circle_xc.setRange(-10000, 10000)
+        self.edit_circle_yc.setRange(-10000, 10000)
+        self.edit_circle_r.setRange(-10000, 10000)
+
+        self.edit_circle_xc.setValue(12)
+        self.edit_circle_yc.setValue(13)
+        self.edit_circle_r.setValue(20)
+   
+        self.edit_ellipse_xc.setRange(-10000, 10000)
+        self.edit_ellipse_yc.setRange(-10000, 10000)
+        self.edit_ellipse_rx.setRange(-10000, 10000)
+        self.edit_ellipse_ry.setRange(-10000, 10000)
+        
+        self.edit_ellipse_xc.setValue(2)
+        self.edit_ellipse_yc.setValue(6)
+        self.edit_ellipse_rx.setValue(25)
+        self.edit_ellipse_ry.setValue(16)
+        #self.connect(self.dda_but, SIGNAL("clicked()"), self.drawdda)
+        self.dda_but.clicked.connect(self.drawdda)
+        self.bre_but.clicked.connect(self.drawbre)
+        self.circle_but.clicked.connect(self.drawcircle)
+        self.ellipse_but.clicked.connect(self.drawellipse)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "计算机图形学算法演示程序"))
+        self.dda_but.setText(_translate("MainWindow", "DDA"))#
+        self.bre_but.setText(_translate("MainWindow", "Bresenham"))#
+        self.circle_but.setText(_translate("MainWindow", "中点圆"))#
+        self.ellipse_but.setText(_translate("MainWindow", "中点椭圆"))#
+        self.dda_start.setText(_translate("MainWindow", "起始点坐标"))#
+        self.dda_end.setText(_translate("MainWindow", "终止点坐标"))#
+        self.bre_start.setText(_translate("MainWindow", "起始点坐标"))#
+        self.bre_end.setText(_translate("MainWindow", "终止点坐标"))#
+        self.ellipse_midpoint.setText(_translate("MainWindow", "椭圆中点"))#
+        self.ellipse_rxry.setText(_translate("MainWindow", "椭圆长短半轴"))#
+        self.circle_midpoint.setText(_translate("MainWindow", "圆心"))#
+        self.circle_r.setText(_translate("MainWindow", "半径"))#
+        self.label.setText(_translate("MainWindow", "横坐标"))
+        self.label_2.setText(_translate("MainWindow", "纵坐标"))
+        self.label_3.setText(_translate("MainWindow", "纵坐标"))
+        self.label_4.setText(_translate("MainWindow", "纵坐标"))
+        self.label_5.setText(_translate("MainWindow", "纵坐标"))
+        self.label_6.setText(_translate("MainWindow", "横坐标"))
+        self.label_7.setText(_translate("MainWindow", "横坐标"))
+        self.label_8.setText(_translate("MainWindow", "横坐标"))
+        self.label_12.setText(_translate("MainWindow", "y半轴长"))
+        self.label_13.setText(_translate("MainWindow", "纵坐标"))
+        self.label_15.setText(_translate("MainWindow", "纵坐标"))
+        self.label_9.setText(_translate("MainWindow", "横坐标"))
+        self.label_10.setText(_translate("MainWindow", "横坐标"))
+        self.label_11.setText(_translate("MainWindow", "横坐标"))
+        self.label_14.setText(_translate("MainWindow", "x半轴长"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
