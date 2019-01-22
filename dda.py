@@ -33,4 +33,4 @@ def DrawDDA(x1,y1,x2,y2):
         plt.pause(0.1)
         plt.draw()
     plt.show()
-DrawDDA(1,3,20,9)
+#DrawDDA(1,3,20,9)
