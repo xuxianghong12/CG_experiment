@@ -50,4 +50,4 @@ def Drawellipse(xc, yc, rx, ry):
             plt.draw()
     plt.show()
 
-Drawellipse(2,3,13,25)
+#Drawellipse(2,3,13,25)
