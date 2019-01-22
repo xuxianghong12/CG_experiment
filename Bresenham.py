@@ -43,4 +43,4 @@ def DrawBre(x1,y1,x2,y2):
         plt.draw()
     plt.show()
 
-DrawBre(1,3,20,9)
+#DrawBre(1,3,20,9)
